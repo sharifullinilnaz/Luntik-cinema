@@ -29,6 +29,7 @@ namespace FilmMicroservice.Repository
 
             Film filmToUpdate = Get(updatedFilm.Id);
             filmToUpdate.Name = updatedFilm.Name;
+            filmToUpdate.Category = updatedFilm.Category;
             filmToUpdate.Description = updatedFilm.Description;
             filmToUpdate.AgeLimit = updatedFilm.AgeLimit;
             filmToUpdate.Duration = updatedFilm.Duration;

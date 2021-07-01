@@ -40,28 +40,38 @@ namespace AccountMicroservice.Repository
         }
         public void Create(User item)
         {
-            byte[] tmpSource = ASCIIEncoding.ASCII.GetBytes(item.HashedPassword);
-            byte[]  hashedPassword = new MD5CryptoServiceProvider().ComputeHash(tmpSource);
-            item.HashedPassword = Encoding.Default.GetString(hashedPassword);
-            Context.Users.Add(item);
-            Context.SaveChanges();
+            User user = Context.Users.SingleOrDefault(itemBD => itemBD.Email == item.Email);
+            if (user == null)
+            {
+                byte[] tmpSource = ASCIIEncoding.ASCII.GetBytes(item.HashedPassword);
+                byte[] hashedPassword = new MD5CryptoServiceProvider().ComputeHash(tmpSource);
+                item.HashedPassword = Encoding.Default.GetString(hashedPassword);
+                Context.Users.Add(item);
+                Context.SaveChanges();
+            }
         }
         public void Update(User updatedUser)
         {
-            byte[] tmpSource = ASCIIEncoding.ASCII.GetBytes(updatedUser.HashedPassword);
-            byte[] hashedPassword = new MD5CryptoServiceProvider().ComputeHash(tmpSource);
-            string passwordToSet = Encoding.Default.GetString(hashedPassword);
-
             User userToUpdate = Get(updatedUser.Id);
-            userToUpdate.Email = updatedUser.Email;
-            userToUpdate.FirstName = updatedUser.FirstName;
-            userToUpdate.LastName = updatedUser.LastName;
-            userToUpdate.DateOfBirth = updatedUser.DateOfBirth;
-            userToUpdate.PhoneNumber = updatedUser.PhoneNumber;
-            userToUpdate.HashedPassword = passwordToSet;
 
-            Context.Users.Update(userToUpdate);
-            Context.SaveChanges();
+            User user = Context.Users.SingleOrDefault(itemBD => itemBD.Email == updatedUser.Email);
+
+            if (user == null || updatedUser.Email == userToUpdate.Email)
+            {
+                byte[] tmpSource = ASCIIEncoding.ASCII.GetBytes(updatedUser.HashedPassword);
+                byte[] hashedPassword = new MD5CryptoServiceProvider().ComputeHash(tmpSource);
+                string passwordToSet = Encoding.Default.GetString(hashedPassword);
+
+                userToUpdate.Email = updatedUser.Email;
+                userToUpdate.FirstName = updatedUser.FirstName;
+                userToUpdate.LastName = updatedUser.LastName;
+                userToUpdate.DateOfBirth = updatedUser.DateOfBirth;
+                userToUpdate.PhoneNumber = updatedUser.PhoneNumber;
+                userToUpdate.HashedPassword = passwordToSet;
+
+                Context.Users.Update(userToUpdate);
+                Context.SaveChanges();
+            }
         }
 
         public void ChangeRole(int Id)

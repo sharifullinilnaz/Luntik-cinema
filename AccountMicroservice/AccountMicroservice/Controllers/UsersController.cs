@@ -80,7 +80,7 @@ namespace AccountMicroservice.Controllers
             return null;
         }
 
-        [Authorize(Roles = "admin")]
+        [Authorize]
         [HttpGet(Name = "GetAllUsers")]
         public IEnumerable<User> Get()
         {
@@ -110,7 +110,16 @@ namespace AccountMicroservice.Controllers
             }
             user.IsAdmin = false;
             UserRepository.Create(user);
-            return CreatedAtRoute("GetUser", new { id = user.Id }, user);
+            User userFromBD = UserRepository.Get(user.Id);
+            if (userFromBD != null)
+            {
+                return CreatedAtRoute("GetUser", new { id = user.Id }, user);
+            }
+            else
+            {
+                return BadRequest(new { errorText = "User with this email is already registered" });
+            }
+
         }
 
         [Authorize]

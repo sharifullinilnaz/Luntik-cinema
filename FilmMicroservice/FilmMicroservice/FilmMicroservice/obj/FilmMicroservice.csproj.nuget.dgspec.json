@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\simbirsoft\\FilmMicroservice\\FilmMicroservice\\FilmMicroservice\\FilmMicroservice.csproj": {}
+    "D:\\SimbirSoft\\FilmMicroservice\\FilmMicroservice\\FilmMicroservice\\FilmMicroservice.csproj": {}
   },
   "projects": {
-    "D:\\simbirsoft\\FilmMicroservice\\FilmMicroservice\\FilmMicroservice\\FilmMicroservice.csproj": {
+    "D:\\SimbirSoft\\FilmMicroservice\\FilmMicroservice\\FilmMicroservice\\FilmMicroservice.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\simbirsoft\\FilmMicroservice\\FilmMicroservice\\FilmMicroservice\\FilmMicroservice.csproj",
+        "projectUniqueName": "D:\\SimbirSoft\\FilmMicroservice\\FilmMicroservice\\FilmMicroservice\\FilmMicroservice.csproj",
         "projectName": "FilmMicroservice",
-        "projectPath": "D:\\simbirsoft\\FilmMicroservice\\FilmMicroservice\\FilmMicroservice\\FilmMicroservice.csproj",
+        "projectPath": "D:\\SimbirSoft\\FilmMicroservice\\FilmMicroservice\\FilmMicroservice\\FilmMicroservice.csproj",
         "packagesPath": "C:\\Users\\пк\\.nuget\\packages\\",
-        "outputPath": "D:\\simbirsoft\\FilmMicroservice\\FilmMicroservice\\FilmMicroservice\\obj\\",
+        "outputPath": "D:\\SimbirSoft\\FilmMicroservice\\FilmMicroservice\\FilmMicroservice\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\пк\\AppData\\Roaming\\NuGet\\NuGet.Config",

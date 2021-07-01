@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\SimbirSoft\\AccountMicroservice\\AccountMicroservice\\AccountMicroservice.csproj": {}
+    "D:\\simbirsoft\\AccountMicroservice\\AccountMicroservice\\AccountMicroservice.csproj": {}
   },
   "projects": {
-    "D:\\SimbirSoft\\AccountMicroservice\\AccountMicroservice\\AccountMicroservice.csproj": {
+    "D:\\simbirsoft\\AccountMicroservice\\AccountMicroservice\\AccountMicroservice.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\SimbirSoft\\AccountMicroservice\\AccountMicroservice\\AccountMicroservice.csproj",
+        "projectUniqueName": "D:\\simbirsoft\\AccountMicroservice\\AccountMicroservice\\AccountMicroservice.csproj",
         "projectName": "AccountMicroservice",
-        "projectPath": "D:\\SimbirSoft\\AccountMicroservice\\AccountMicroservice\\AccountMicroservice.csproj",
+        "projectPath": "D:\\simbirsoft\\AccountMicroservice\\AccountMicroservice\\AccountMicroservice.csproj",
         "packagesPath": "C:\\Users\\пк\\.nuget\\packages\\",
-        "outputPath": "D:\\SimbirSoft\\AccountMicroservice\\AccountMicroservice\\obj\\",
+        "outputPath": "D:\\simbirsoft\\AccountMicroservice\\AccountMicroservice\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\пк\\AppData\\Roaming\\NuGet\\NuGet.Config",

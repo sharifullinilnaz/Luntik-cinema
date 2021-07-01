@@ -24,6 +24,12 @@ namespace FilmMicroservice.Models
         public string Name { get; set; }
 
         /// <summary>
+        /// Категория
+        /// </summary>
+        [Column("category", TypeName = "varchar(128)")]
+        public string Category { get; set; }
+
+        /// <summary>
         /// Описание
         /// </summary>
         [Column("description", TypeName = "varchar(2048)")]
