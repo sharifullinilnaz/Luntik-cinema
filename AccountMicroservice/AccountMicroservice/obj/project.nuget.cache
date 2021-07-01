@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "1viOAViWHyBWUr65lMKFnuNFcUlCYixR28n2RXdSw4Rb/Pa+2LAUA6yT4tWKS4td/pIPBN4tog8YHc5fmsjJaA==",
+  "dgSpecHash": "t9Eou8wrWpx1Xut2i9829kTsHSyuaW7IEONbzk05CGtQWVVoWQNIR1QATyTJyB20isuU9I5AXY1CUGTXGFXHQA==",
   "success": true,
-  "projectFilePath": "D:\\Simbirsoft\\AccountMicroservice\\AccountMicroservice\\AccountMicroservice.csproj",
+  "projectFilePath": "D:\\SimbirSoft\\AccountMicroservice\\AccountMicroservice\\AccountMicroservice.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\пк\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\пк\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\5.0.7\\microsoft.aspnetcore.authentication.jwtbearer.5.0.7.nupkg.sha512",

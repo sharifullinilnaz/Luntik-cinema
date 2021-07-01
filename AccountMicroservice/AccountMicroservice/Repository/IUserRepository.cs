@@ -14,5 +14,6 @@ namespace AccountMicroservice.Repository
         void Update(User item);
         User Delete(int id);
         User GetByLoginForm(string email, string password);
+        void ChangeRole(int id);
     }
 }

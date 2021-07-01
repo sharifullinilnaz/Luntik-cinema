@@ -59,9 +59,16 @@ namespace AccountMicroservice.Repository
             userToUpdate.DateOfBirth = updatedUser.DateOfBirth;
             userToUpdate.PhoneNumber = updatedUser.PhoneNumber;
             userToUpdate.HashedPassword = passwordToSet;
-            userToUpdate.IsAdmin = updatedUser.IsAdmin;
 
             Context.Users.Update(userToUpdate);
+            Context.SaveChanges();
+        }
+
+        public void ChangeRole(int Id)
+        {
+            User user = Get(Id);
+            user.IsAdmin = !user.IsAdmin;
+            Context.Users.Update(user);
             Context.SaveChanges();
         }
 

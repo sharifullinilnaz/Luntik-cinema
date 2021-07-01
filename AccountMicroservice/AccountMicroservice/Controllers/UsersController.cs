@@ -36,7 +36,7 @@ namespace AccountMicroservice.Controllers
             }
 
             var now = DateTime.UtcNow;
-            // создаем JWT-токен
+            
             var jwt = new JwtSecurityToken(
                     issuer: AuthOptions.ISSUER,
                     audience: AuthOptions.AUDIENCE,
@@ -77,16 +77,17 @@ namespace AccountMicroservice.Controllers
                 return claimsIdentity;
             }
 
-            // если пользователя не найдено
             return null;
         }
 
+        [Authorize(Roles = "admin")]
         [HttpGet(Name = "GetAllUsers")]
         public IEnumerable<User> Get()
         {
             return UserRepository.Get();
         }
 
+        [Authorize]
         [HttpGet("{Id}", Name = "GetUser")]
         public IActionResult Get(int Id)
         {
@@ -107,10 +108,12 @@ namespace AccountMicroservice.Controllers
             {
                 return BadRequest();
             }
+            user.IsAdmin = false;
             UserRepository.Create(user);
             return CreatedAtRoute("GetUser", new { id = user.Id }, user);
         }
 
+        [Authorize]
         [HttpPut("{Id}")]
         public IActionResult Update(int Id, [FromBody] User updatedUser)
         {
@@ -130,6 +133,7 @@ namespace AccountMicroservice.Controllers
             return new ObjectResult(user);
         }
 
+        [Authorize]
         [HttpDelete("{Id}")]
         public IActionResult Delete(int Id)
         {
@@ -141,6 +145,22 @@ namespace AccountMicroservice.Controllers
             }
 
             return new ObjectResult(deletedUser);
+        }
+
+        [Authorize(Roles = "admin")]
+        [HttpPut("changeRole/{Id}", Name = "ChangeRole")]
+        public IActionResult ChangeRole(int Id)
+        {
+
+            var user = UserRepository.Get(Id);
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            UserRepository.ChangeRole(Id);
+            user = UserRepository.Get(Id);
+            return new ObjectResult(user);
         }
 
     }
