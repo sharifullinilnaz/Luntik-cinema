@@ -98,5 +98,26 @@ namespace TicketMicroservice.Controllers
             return new ObjectResult(ticket);
         }
 
+        [Authorize(Roles = "admin")]
+        [HttpPost("/fullSeance")]
+        public IEnumerable<Ticket> FullSeance(int SeanceId, int Price)
+        {
+            for (int i = 1; i < 11; i++)
+            {
+                for (int j = 1; j < 11; j++)
+                {
+                    string place = "row " + i + " seat " + j;
+                    Ticket ticket = new()
+                    {
+                        SeanceId = SeanceId,
+                        Price = Price,
+                        Place = place
+                    };
+                    TicketRepository.Create(ticket);
+                }
+            }
+            return TicketRepository.Get();
+        }
+
     }
 }

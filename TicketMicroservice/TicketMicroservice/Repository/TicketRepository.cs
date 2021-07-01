@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using TicketMicroservice.Models;
+using System.Linq;
 
 namespace TicketMicroservice.Repository
 {
@@ -21,8 +22,12 @@ namespace TicketMicroservice.Repository
         }
         public void Create(Ticket item)
         {
-            Context.Tickets.Add(item);
-            Context.SaveChanges();
+            Ticket ticketFromBD = Context.Tickets.SingleOrDefault(itemBD => itemBD.Place == item.Place && itemBD.SeanceId == item.SeanceId);
+            if (ticketFromBD == null)
+            {
+                Context.Tickets.Add(item);
+                Context.SaveChanges();
+            }
         }
         public void Update(Ticket updatedTicket)
         {

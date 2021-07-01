@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "YCjIZiXysFAkaBjuZVhuMnnOhYRaCmzfYJsuaL4NRoPjFE37FSngJOE8pjy/gkuasn0iWrWSwKvhjYxQy4WSyA==",
+  "dgSpecHash": "R9v4cTVhgUOt/9/5RhGjGpjdhp5z7xgB1ZQz5FKanQ4eSYsiTDAnI3L3rIvmZR9SB1izDYS4hr44fbCcHYJeQg==",
   "success": true,
-  "projectFilePath": "D:\\simbirsoft\\TicketMicroservice\\TicketMicroservice\\TicketMicroservice.csproj",
+  "projectFilePath": "D:\\Simbirsoft\\TicketMicroservice\\TicketMicroservice\\TicketMicroservice.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\пк\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\5.0.7\\microsoft.aspnetcore.authentication.jwtbearer.5.0.7.nupkg.sha512",
     "C:\\Users\\пк\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
